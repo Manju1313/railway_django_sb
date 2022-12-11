@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  var objPerson = {
+    name: "John Doe",
+    age: 32,
+    gender: "Male",
+    test: function(){
+      $("p").after("Name: " + this.name + "<br> Age: " + this.age  + "<br> gender: " + this.gender+"<br>");
+    }
+  };
+  $("button").click($.proxy(objPerson, "test"));
+});
+</script>
+</head>
+<body>
+
+<button>Run test function</button>
+
+<p></p>
+
+</body>
+</html>

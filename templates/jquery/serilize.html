@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").text($("form").serialize());
+  });
+});
+</script>
+</head>
+<body>
+
+<form action="">
+  First name: <input type="text" name="FirstName" value="Mickey"><br>
+  Last name: <input type="text" name="LastName" value="Mouse"><br>
+  Age: <input type="int" name="Age" value="19"><br>
+  Gender: <input type="text" name="Gender" value="Male"><br><br>
+</form>
+
+<button>Serialize form values</button>
+
+<div></div>
+
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- serilize array -->
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var x = $("form").serializeArray();
+    $.each(x, function(i, field){
+      $("#results").append(field.name + ":" + field.value + " ");
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<form action="">
+  First name: <input type="text" name="FirstName" value="Mickey"><br>
+  Last name: <input type="text" name="LastName" value="Mouse"><br>
+  Age: <input type="int" name="Age" value="19"><br>
+  Gender: <input type="text" name="Gender" value="Male"><br><br>
+</form>
+
+<button>Serialize form values</button>
+
+<div id="results"></div>
+
+</body>
+</html>
+
+
+
+
+

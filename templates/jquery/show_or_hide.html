@@ -1,0 +1,82 @@
+<form>
+
+    <label for="i1">Input 1</label>
+    <input id="i1" type="radio" name="name1" value="1">
+  
+    <label for="i2">Input 2</label>
+    <input id="i2" type="radio" name="name1" value="2">
+  
+    <div data-view-conditions="name1:2">
+      <p>Hello</p>
+      <label for="i3">Click me</label>
+      <input id="i3" type="checkbox" name="name2">
+  
+      <div data-view-conditions="name2">
+        <p>It works!</p>
+      </div>
+    </div>
+    
+    <script>
+
+        
+        jQuery(function($){
+
+        // Prevents errors in old IE.
+    if(!window.console || !window.console.log) window.console = {log: function(){}};
+  
+    // Enable debugging for complex logic.
+    var debug = true;
+    
+    function checkConditions(inputs, views){
+        views.each(function(){
+        var view = $(this);
+        var conditions = view.attr('data-view-conditions').split(',');
+        var display = true;
+  
+        // Loop over all required conditions to be met.
+        for(var i = 0; i < conditions.length; i++){
+          var name = conditions[i].split(':')[0];
+          var value = conditions[i].split(':')[1];
+          var input = inputs.filter('[name="' + name + '"]:checked');
+  
+          if(debug) console.log('\nRecalculating view conditions.');
+  
+          if(!input.length){
+            display = false;
+            if(debug) console.log('View not show as no :checked input with the name "' + name + '" was found.');
+          }else{
+            if(value != undefined && input.val() != value){
+              display = false;
+              if(debug) console.log('View not show as no :checked input with the name "' + name + '" has the value of "' + input.val() + '". Value needed was: "' + value + '".');
+            }
+          }
+        }
+  
+        if(display){
+          view.css({display: 'block'});
+        }else{
+          view.css({display: 'none'});
+        }
+  
+      });
+    }
+  
+    $('form').each(function(){
+      var form = $(this);
+      var inputs = form.find('input[type="checkbox"], input[type="radio"]');
+      var views = form.find('[data-view-conditions]');
+  
+      // Recalculate which views to be shown each time the inputs change.
+      inputs.on('change', function(e){
+        checkConditions(inputs, views);
+      });
+  
+      // Check conditions to set up required view state on page load.
+      checkConditions(inputs, views);
+    });
+  
+});
+    </script>
+
+
+</form>

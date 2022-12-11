@@ -1,0 +1,138 @@
+<style>
+
+    #more {display: none;}
+</style>
+        <div class="card-header border-bottom">
+            <h4 class="card-title">Patient search</h4>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+            
+<div class="shadow-lg p-3 mb-5 bg-white rounded container-fluid">
+    <form method='POST' class="needs-validation" novalidate>
+      {% csrf_token %}
+
+        <div class="row">
+                <div class="col-md-4">
+                    <label for="validationCustom04" class="form-label">Pre ART Number:(<span style="color:orangered;font-weight:bold">*</span>):</label>
+                    <input type="text" class="form-control"  name="name" required>
+                </div>
+                <div class="col-lg-4">
+                    <label>ART Number:</label>
+                    <input name="art_no" type="text" value="{% if art_no %}{{art_no}}{% endif %}" class="form-control dt-input dt-ART-number" data-column="4" placeholder="" data-column-index="3" />
+                </div>
+            <div class="col-lg-4">
+                <label>Patient Name:</label>
+                <input name="patient_name" type="text" value="{% if patient_name %}{{patient_name}}{% endif %}" class="form-control dt-input dt-full-name" data-column="1" placeholder="" data-column-index="0" />
+            </div>
+        </div>
+        <span id="data"> .... </span><span id="more">
+    <div id="div1">
+        <div  class="row">
+            <div class="col-md-4">
+                <label>Mobile Number:</label>
+
+                <input name="mobile_number" type="number" value="{{mobile_number}}" class="form-control dt-input" data-column="3"  data-column-index="2" />
+            </div>
+            <div class="col-lg-4">
+                <label>Aadhaar Number:</label>
+                <input name="aadhar_number" type="number" class="form-control dt-input" value="{{aadhar_number}}" data-column="5" placeholder="" data-column-index="5" />
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="inputState">gender(<span style="color:orangered;font-weight:bold">*</span>):</label>
+                    <select class="form-select" id="validationCustom04" name="gender" required>
+                        <option selected disabled value="">Choose...</option>     
+                        <option value="1">Male</option>
+                        <option value="2">female</option>
+                        <option value=3>TS / TG</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+            <div id="div2" class="row">
+                <div class="col-lg-4">
+                    <label>Family ID:</label>
+                    <input type="text" name="family_id" value="{{family_id}}" class="form-control dt-input dt-full-name" data-column="2" placeholder="" data-column-index="1" />
+                </div>
+                <div class="col-lg-4">
+                    <label>Date of Visit:</label>
+                    <input type="text" name="date_visit" value="{{date_visit}}" class="form-control dt-input dt-full-name dis_fut_dt" data-column="2" placeholder="" data-column-index="1" />
+                </div>
+            </div>
+    </div>  
+                
+    
+</form>
+
+        <br>
+        <br>
+            </span>
+            <button class="position-absolute bottom-30 end-50" onclick="myFunction()" id="myBtn">Show more</button>
+            
+            <script>
+                function myFunction() {
+                    var data = document.getElementById("data");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+            
+            if (data.style.display === "none") {
+                data.style.display = "inline";
+                btnText.innerHTML = "Show more"; 
+                moreText.style.display = "none";
+            } else {
+                data.style.display = "none";
+                btnText.innerHTML = "Show less"; 
+                moreText.style.display = "inline";
+            }
+        }
+        </script>
+
+<div>
+    <button type="submit" class="btn btn-primary mr-1 waves-effect waves-float waves-light" tabindex="5">Search</button>
+    <span type="reset" class="btn btn-outline-dark" onclick="location.href='/patient/plha-listing/'" tabindex="7">Reset</span>
+    
+</div> 
+  
+<style>
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+  }
+  
+  .next {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .round {
+    border-radius: 50%;
+  }
+  </style>
+  
+<div class="position-absolute bottom-0 end-0">
+
+    <a href="#" class="previous">&laquo; Previous</a>
+    <a href="#" class="next">Next &raquo;</a>
+    
+    <a href="#" class="previous round">&#8249;</a>
+    <a href="#" class="next round">&#8250;</a>
+</div>
+  
+</div>
+
