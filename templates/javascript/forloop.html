@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Loop</h2>
+
+<p id="demo"></p>
+
+<script>
+// const items = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi","s","v","u"];
+
+// let text = `hello ${items} over <br>`;
+// for (let i = 2; i < items.length; i++) {
+//   text += items[i] + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text;
+
+
+
+
+// let text = "";
+
+// for (let i = -6; i < 5; i++) {
+//   text += "The number is " + i + "<br>";
+// }
+
+// document.getElementById("demo").innerHTML = text
+
+
+
+
+
+const cars = ["BMW", "Volvo", "Saab", "Ford"];
+let i = 2;
+let len = cars.length;
+let text = "";
+
+for (; i < len; i++) {
+  text += cars[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = text;
+
+
+</script>
+
+</body>
+</html> -->
+
+
+
+
+<!-- for in loop -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for in loop</title>
+</head>
+<body>
+  <h2>for in loops js</h2>
+  <p id="loop"></p>
+  <script>
+
+    // const member= {fname:'ratan',lname:'tamos',age:'34'};
+
+    // let data="";
+    // for (let i in member){
+    //   data+=member[i]+ " ";
+    // }
+    // document.getElementById("loop").innerHTML=data
+
+
+    const number=[12,23,34,45,54,334,22,56,67];
+    let data="";
+    // for (let i in number){
+    //   data+=number[i]+ " <br>";
+    // }
+    // document.getElementById("loop").innerHTML=data
+
+
+number.forEach(myFunction);
+document.getElementById("loop").innerHTML = data;
+
+function myFunction(value, index, array) {
+  data += value + "<br>"; 
+
+}
+  </script>
+</body>
+</html>  -->
+
+
+
+
+
+<!-- for of loop -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript For Of Loop</h2>
+<p>The for of statement loops through the values of any iterable object:</p>
+
+<p id="demo"></p>
+
+<script>
+// const audi=["BMW","Audi","Benz","Xuv","Suv","Saab"];
+// let test="";
+
+// for (let x of audi){
+//   test+=x+ "<br>"
+// }
+// document.getElementById("demo").innerHTML=test
+
+
+let concept="JAVA SCRIPT";
+let text="";
+for (let i of concept){
+  text+=i+"<br>";
+}
+
+document.getElementById("demo").innerHTML=text
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

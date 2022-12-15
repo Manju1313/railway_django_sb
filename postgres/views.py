@@ -51,15 +51,65 @@ def patient_reg(request):
     return render(request,"jquery/patient_reg.html")
 
 
+# Ajax
+def ajax_load(request):
+    return render(request,"jquery/ajax_load.html")
+
+
+
+
+
+
+
 
 # javascript
 def output(request):
     return render(request,"javascript/output.html")
 
 
+def operator(request):
+    return render(request,"javascript/operator.html")
+
+
 def variables(request):
     return render(request,"javascript/variables.html")
 
 
+def function(request):
+    return render(request,"javascript/function.html")
 
 
+def events(request):
+    return render(request,"javascript/events.html")
+
+
+def string(request):
+    return render(request,"javascript/string.html")
+
+
+def stringmethod(request):
+    return render(request,"javascript/stringmethod.html")
+
+
+def search(request):
+    return render(request,"javascript/stringsearch.html")
+
+
+def stringtemplate(request):
+    return render(request,"javascript/stringtemplate.html")
+
+
+def comparison(request):
+    return render(request,"javascript/comparison.html")
+
+
+def ifelse(request):
+    return render(request,"javascript/ifelse.html")
+
+
+def forloop(request):
+    return render(request,"javascript/forloop.html")
+
+
+def whileloop(request):
+    return render(request,"javascript/whileloop.html")

@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript if .. else</h2>
+
+<p>A time-based greeting:</p>
+
+<p id="demo"></p>
+
+<script>
+// const hour = new Date().getHours(); 
+// let greeting;
+
+// if (hour < 15) {
+//   greeting = "Good day";
+// } else {
+//   greeting = "Good evening";
+// }
+
+// document.getElementById("demo").innerHTML = greeting;
+
+
+
+   const day = new Date().getHours();
+        let greetin;
+        if (day < 10) {
+        greetin = "Good morning";
+        } else if (day < 20) {
+        greetin = "Good day";
+        } else {
+        greetin = "Good evening";
+        }
+        document.getElementById("demo").innerHTML = greetin;
+</script>
+</body>
+</html> -->
+
+
+
+<!-- Swith case -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript switch</h2>
+
+<p id="demo"></p>
+
+<script>
+// let day;
+// switch (new Date().getDay()) {
+//   case 0:
+//     day = "Sunday";
+//     break;
+//   case 1:
+//     day = "Monday";
+//     break;
+//   case 2:
+//     day = "Tuesday";
+//     break;
+//   case 3:
+//     day = "Wednesday";
+//     break;
+//   case 4:
+//     day = "Thursday";
+//     break;
+//   case 5:
+//     day = "Friday";
+//     break;
+//   case  6:
+//     day = "Saturday";
+// }
+// document.getElementById("demo").innerHTML = "Today is " + day;
+
+
+
+// let text;
+// switch (new Date().getDay()) {
+//     case 0:
+//       text = "Today is Sunday";
+//       break;
+//     case 6:
+//         text = "Today is Saturday";
+//         break;
+//     default:
+//     text = "Looking forward to the Weekend";
+//     }
+//     document.getElementById("demo").innerHTML = text;
+
+
+
+
+let text;
+switch (new Date().getDay()){
+    default:
+        text="far weekend";
+        break
+
+    case 3:
+    case 4:
+        text="wait for weekend";
+        break
+
+    case 5:
+        text="weekend is comming";
+        break
+
+    case 6:
+    case 0:
+        text="this is weekend";
+}
+document.getElementById("demo").innerHTML=text
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+ <!-- <html>
+    <body>
+        <h1>JavaScript Comparison</h1>
+        <h2>The () ? : Ternary Operator</h2>
+        
+        <p>Input your age and click the button:</p>
+
+        <input id="age" value="25">
+        <button onclick="myFunction()">find</button>
+        <p id="data"></p>
+
+        <script>
+            function myFunction(){
+                let age= document.getElementById("age").value;
+                let vote=(age<18) ? "Not eligible":"eligible ";
+                document.getElementById("data").innerHTML=vote+  "to vote"
+            }
+
+        </script>
+    </body>
+</html>  -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Comparisons</h2>
+
+<p>Input your age and click the button:</p>
+
+<input id="age" value="18" />
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let voteable;
+  let age = Number(document.getElementById("age").value);
+  if (isNaN(age)) {
+    voteable = "Input is not a number";
+  } else {
+    voteable = (age < 18) ? "Too young" : "Old enough";
+  }
+  document.getElementById("demo").innerHTML = voteable + " to vote";
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+

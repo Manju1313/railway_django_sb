@@ -19,11 +19,24 @@ urlpatterns = [
     path('proxy',views.proxy, name='proxy'),
     path('show_or_hide',views.show_or_hide, name='show_or_hide'),
     path('patient_reg',views.patient_reg, name='patient_reg'),
+# ajax
+    path('ajax_load',views.ajax_load, name='ajax_load'),
+
+
 
 
 # javascript
     path('output',views.output, name='output'),
+    path('operator',views.operator, name='operator'),
     path('variables',views.variables, name='variables'),
-
+    path('function',views.function, name='function'),
+    path('events',views.events, name='events'),
+    path('string',views.string, name='string'),
+    path('search',views.search, name='search'),
+    path('stringtemplate',views.stringtemplate, name='stringtemplate'),
+    path('comparison',views.comparison, name='comparison'),
+    path('ifelse',views.ifelse, name='ifelse'),
+    path('forloop',views.forloop, name='forloop'),
+    path('whileloop',views.whileloop, name='whileloop'),
 
 ]
